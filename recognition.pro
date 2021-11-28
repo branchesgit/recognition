@@ -17,7 +17,9 @@ LIBS += -L/usr/local/lib \
 
 
 SOURCES += main.cpp \
-    utils/file.cpp
+    utils/file.cpp \
+    utils/boundary.cpp
 
 HEADERS += \
-    utils/file.h
+    utils/file.h \
+    utils/boundary.h

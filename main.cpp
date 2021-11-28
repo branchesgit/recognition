@@ -2,6 +2,7 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/opencv.hpp>
 #include "utils/file.h"
+#include "utils/boundary.h"
 
 using namespace std;
 using namespace cv;
@@ -15,8 +16,7 @@ int main()
     Json::Value root = file.parse(content);
     string tempfilePath = root["setting"]["featureRecognition"]["templateFile"].asString();
     Mat mat = imread(tempfilePath, cv::IMREAD_COLOR);
-    imshow("lively", mat);
-    waitKey(0);
-    cout << "Hello World!" << endl;
+    Boundary boundary;
+    boundary.getCours(mat);
     return 0;
 }
